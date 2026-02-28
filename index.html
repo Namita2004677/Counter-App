@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f2f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .counter-box{
+            background:#fff;
+            padding:30px 40px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            margin-bottom:10px;
+        }
+
+        h1{
+            font-size:50px;
+            margin:20px 0;
+            color:#333;
+        }
+
+        button{
+            padding:10px 18px;
+            font-size:18px;
+            margin:5px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .inc{
+            background:#4caf50;
+            color:white;
+        }
+
+        .dec{
+            background:#f44336;
+            color:white;
+        }
+
+        .reset{
+            background:#2196f3;
+            color:white;
+        }
+        
+
+        
+
+        button:hover{
+            opacity:0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counter-box">
+        <h2>Counter</h2>
+        <h1 id="count">0</h1>
+
+        <button class="inc" onclick="increase()">+</button>
+        <button class="dec" onclick="decrease()">-</button>
+        <button class="reset" onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increase(){
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        function decrease(){
+            if(count > 0){
+                count--;
+                document.getElementById("count").innerHTML = count;
+            }
+        }
+
+        function reset(){
+            count = 0;
+            document.getElementById("count").innerHTML = count;
+        }
+    </script>
+
+</body>
+</html>
